@@ -273,6 +273,11 @@ end sub
 sub TestSettings()
     s = SettingsNormalize({ uiLang: "xx", maxQuality: "720p", prefLangs: [] })
     Eq("idioma invalido vuelve a es", s.uiLang, "es")
+    Eq("idioma pt se conserva", SettingsNormalize({ uiLang: "pt" }).uiLang, "pt")
+    Eq("tmdb pt-BR", TmdbLanguage("pt"), "pt-BR")
+    Eq("tmdb en-US", TmdbLanguage("en"), "en-US")
+    Eq("tmdb es-ES", TmdbLanguage("es"), "es-ES")
+    TestTranslations()
     Eq("calidad", s.maxQuality, "720p")
     Eq("idiomas vacios usan los de defecto", s.prefLangs, ["es-419", "es", "en"])
     Eq("normalizar basura", SettingsNormalize("basura").uiLang, "es")
@@ -337,4 +342,26 @@ sub RunStubTests()
     Eq("stub: teclado no cambia nada", PluginApplyKeyboard(s, "x", "texto").uiLang, "es")
     s.streamAddons = ["https://a.example"]
     Eq("stub: addon del usuario es el unico", AddonsEffective(s), ["https://a.example"])
+end sub
+
+' Idioma de la interfaz: es por defecto, en y pt eligen su columna, y si falta el portugués se usa el español.
+sub TestTranslations()
+    old = m.global
+    m.global = { lang: "es" }
+    Eq("tx es", Tx("btn_back"), "Volver")
+    m.global = { lang: "en" }
+    Eq("tx en", Tx("btn_back"), "Back")
+    m.global = { lang: "pt" }
+    Eq("tx pt", Tx("btn_back"), "Voltar")
+    Eq("tx pt con argumento", Tx("home_left", 5), "Faltam 5 min")
+    Eq("tx clave desconocida", Tx("no_existe_xyz"), "no_existe_xyz")
+    table = StringsTable()
+    table["zz_solo_es_en"] = ["Hola", "Hello"]
+    Eq("tx pt sin traduccion usa es", Tx("zz_solo_es_en"), "Hola")
+    m.global = { lang: "en" }
+    Eq("tx en con par es/en", Tx("zz_solo_es_en"), "Hello")
+    m.global = { lang: "xx" }
+    Eq("tx idioma raro usa es", Tx("btn_back"), "Volver")
+    table.Delete("zz_solo_es_en")
+    m.global = old
 end sub

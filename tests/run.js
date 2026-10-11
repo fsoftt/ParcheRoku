@@ -1,5 +1,5 @@
 // Ejecuta fuera del dispositivo las pruebas de la lógica pura con el intérprete "brs" y además verifica que todas
-// las claves de traducción usadas en el código existan en español e inglés.
+// las claves de traducción usadas en el código existan en español, inglés y portugués.
 // Uso: npm test            (públicas con el Plugins.brs neutro y, si hay plugin, públicas + plugin con el real)
 //      npm test -- --no-plugins   (solo el árbol público)
 // El plugin se busca como en scripts/plugins.js (PARCHE_ROKU_PLUGINS, ../ParcheRoku.Sources); sus pruebas
@@ -58,10 +58,13 @@ function checkTranslations(pluginsFile, componentDirs, label) {
     for (const m of fs.readFileSync(path.join(libDir, "Catalog.brs"), "utf8").matchAll(/title: "(home_[a-z_]+)"/g)) used.add(m[1]);
     const missing = [...used].filter((k) => !defined.has(k));
     const pairs = [...defineSrc.matchAll(/t\["([a-z0-9_]+)"\]\s*=\s*\[(.*)\]\s*$/gm)];
-    const badPairs = pairs.filter((m) => !/^".*"\s*,\s*".*"$/.test(m[2].replace(/ \+ Chr\(10\) \+ /g, ""))).map((m) => m[1]);
+    // Cada clave debe traer exactamente tres textos no vacíos: [español, inglés, portugués].
+    const q = '"((?:[^"]|"")+)"';
+    const trio = new RegExp("^" + q + "\\s*,\\s*" + q + "\\s*,\\s*" + q + "$");
+    const badPairs = pairs.filter((m) => !trio.test(m[2].replace(/" \+ Chr\(10\) \+ "/g, "~"))).map((m) => m[1]);
     console.log(missing.length ? `FAIL traducciones faltantes (${label}): ` + missing.join(", ") : `PASS traducciones (${label}): ${used.size} claves usadas, todas definidas`);
     if (missing.length) failures++;
-    if (badPairs.length) { console.log("FAIL pares es/en mal formados: " + badPairs.join(", ")); failures++; }
+    if (badPairs.length) { console.log("FAIL tríos es/en/pt mal formados o vacíos: " + badPairs.join(", ")); failures++; }
     const unused = [...defined].filter((k) => !used.has(k));
     if (unused.length) console.log("AVISO claves sin usar: " + unused.join(", "));
     return failures;

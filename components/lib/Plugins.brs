@@ -19,7 +19,7 @@
 '   PluginSourcesNotice(s)               texto para el selector de fuentes cuando no hay ningún addon efectivo, o
 '                                        invalid para el aviso estándar ("agrega un addon").
 '   PluginStrings()                      traducciones extra o que reemplazan a las de Strings.brs:
-'                                        { clave: [español, inglés] }.
+'                                        { clave: [español, inglés, portugués] }.
 
 ' bs:disable-next-line
 function PluginSettingsNormalize(raw as object, s as object) as object

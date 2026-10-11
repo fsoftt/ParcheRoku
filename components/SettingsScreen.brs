@@ -61,6 +61,7 @@ sub refresh()
 
     uiName = "Espa" + Chr(241) + "ol"
     if s.uiLang = "en" then uiName = "English"
+    if s.uiLang = "pt" then uiName = "Portugu" + Chr(234) + "s"
     catName = Tx("set_auto")
     if s.catalog = "tmdb" then catName = "TMDB"
     if s.catalog = "cinemeta" then catName = "Cinemeta"
@@ -133,7 +134,13 @@ sub onSelect()
     id = rowIdAt(m.list.itemSelected)
     s = SettingsLoad()
     if id = "uilang" then
-        if s.uiLang = "es" then s.uiLang = "en" else s.uiLang = "es"
+        if s.uiLang = "es" then
+            s.uiLang = "en"
+        else if s.uiLang = "en" then
+            s.uiLang = "pt"
+        else
+            s.uiLang = "es"
+        end if
         SettingsSave(s)
         m.global.lang = s.uiLang
         m.top.action = { type: "restart" }

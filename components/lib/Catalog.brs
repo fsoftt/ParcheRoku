@@ -251,6 +251,7 @@ end function
 ' Idioma de TMDB según el idioma de la interfaz.
 function TmdbLanguage(uiLang as string) as string
     if uiLang = "en" then return "en-US"
+    if uiLang = "pt" then return "pt-BR"
     return "es-ES"
 end function
 

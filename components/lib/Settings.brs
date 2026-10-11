@@ -49,7 +49,7 @@ function SettingsNormalize(raw as dynamic) as object
         if not s.DoesExist(k) then s[k] = raw[k]
     end for
     if IsStr(raw.uiLang) then
-        if raw.uiLang = "en" or raw.uiLang = "es" then s.uiLang = raw.uiLang
+        if raw.uiLang = "en" or raw.uiLang = "es" or raw.uiLang = "pt" then s.uiLang = raw.uiLang
     end if
     if IsStr(raw.catalog) then
         if raw.catalog = "tmdb" or raw.catalog = "cinemeta" or raw.catalog = "auto" then s.catalog = raw.catalog
