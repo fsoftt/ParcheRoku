@@ -75,7 +75,8 @@ async function runBrs(label, files) {
     console.log(`\n== ${label} ==`);
     let output = "";
     const out = { write: (s) => { output += s; return true; } };
-    await brs.execute(files, { root, stdout: out, stderr: out });
+    // componentDirs evita que brs busque XML en toda la raíz (con la lista vacía el patrón incluye node_modules en Linux).
+    await brs.execute(files, { root, componentDirs: ["components"], stdout: out, stderr: out });
     process.stdout.write(output);
     let failures = 0;
     if (/^FAIL /m.test(output)) failures++;
