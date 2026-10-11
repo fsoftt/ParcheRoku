@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Portada: menú, héroe con la ficha del título enfocado y filas (Continuar viendo + catálogo). -->
+<component name="HomeScreen" extends="Group">
+    <interface>
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <Poster id="backdrop" translation="[0,0]" width="1920" height="760" loadDisplayMode="scaleToZoom" />
+        <Poster id="gradLeft" translation="[0,0]" width="1300" height="760" uri="pkg:/images/grad_left.png" />
+        <Poster id="gradBottom" translation="[0,360]" width="1920" height="400" uri="pkg:/images/grad_bottom.png" />
+        <ButtonBar id="nav" translation="[80,36]" itemWidth="190" barHeight="56" />
+        <Label id="heroTitle" translation="[80,150]" width="1100" height="64" wrap="false" font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+        <Label id="heroMeta" translation="[80,222]" width="1100" height="40" font="font:SmallBoldSystemFont" color="0xEC4899FF" />
+        <Label id="heroDesc" translation="[80,268]" width="1000" height="110" font="font:SmallSystemFont" color="0xE5E7EBFF" wrap="true" lineSpacing="4" />
+        <RowList id="rows" translation="[0,420]" itemComponentName="PosterItem" numRows="2"
+            itemSize="[1920,380]" itemSpacing="[0,40]" rowHeights="[380]" rowItemSize="[[200,300]]" rowItemSpacing="[[24,0]]"
+            focusXOffset="[80]" rowLabelOffset="[[80,10]]" showRowLabel="[true]" rowLabelColor="0xE5E7EBFF"
+            rowFocusAnimationStyle="floatingFocus" drawFocusFeedback="false" visible="false" />
+        <Label id="status" translation="[0,500]" width="1920" height="80" font="font:MediumSystemFont" color="0xE5E7EBFF" horizAlign="center" wrap="true" />
+        <ButtonBar id="retry" translation="[860,600]" itemWidth="200" barHeight="60" filled="true" visible="false" />
+    </children>
+    <script type="text/brs" uri="HomeScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

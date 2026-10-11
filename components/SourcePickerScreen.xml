@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Selector de fuentes: lista ordenada con descripciones en lenguaje llano y botón "Reproducir el mejor". -->
+<component name="SourcePickerScreen" extends="Group">
+    <interface>
+        <field id="request" type="assocarray" onChange="onRequest" />
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <Label id="title" translation="[80,50]" width="1760" height="70" font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+        <Label id="subtitle" translation="[80,122]" width="1760" height="40" font="font:SmallBoldSystemFont" color="0xEC4899FF" />
+        <ButtonBar id="best" translation="[80,180]" itemWidth="420" barHeight="64" filled="true" visible="false" />
+        <ButtonBar id="chips" translation="[80,254]" itemWidth="200" barHeight="52" filled="true" visible="false" />
+        <Label id="emptyMsg" translation="[80,340]" width="1760" height="80" font="font:MediumSystemFont" color="0xE5E7EBFF" visible="false" />
+        <MarkupList id="list" translation="[80,322]" itemComponentName="TextItem" numRows="5"
+            itemSize="[1760,112]" itemSpacing="[0,6]" drawFocusFeedback="false" focusBitmapUri="pkg:/images/transparent.png" visible="false" />
+        <Label id="status" translation="[160,300]" width="1600" height="300" font="font:MediumSystemFont" color="0xE5E7EBFF" horizAlign="center" wrap="true" lineSpacing="6" />
+        <ButtonBar id="settingsBtn" translation="[760,640]" itemWidth="400" barHeight="64" filled="true" visible="false" />
+        <Label id="hint" translation="[80,1006]" width="1760" height="40" font="font:SmallestSystemFont" color="0x9CA3AFFF" />
+    </children>
+    <script type="text/brs" uri="SourcePickerScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

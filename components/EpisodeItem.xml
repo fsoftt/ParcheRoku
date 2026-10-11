@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Fila de episodio para MarkupList: miniatura, título y sinopsis. -->
+<component name="EpisodeItem" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="onContent" />
+        <field id="width" type="float" onChange="onLayout" />
+        <field id="height" type="float" onChange="onLayout" />
+        <field id="index" type="integer" />
+        <field id="rowIndex" type="integer" />
+        <field id="rowHasFocus" type="boolean" />
+        <field id="rowListHasFocus" type="boolean" />
+        <field id="gridHasFocus" type="boolean" />
+        <field id="listHasFocus" type="boolean" />
+        <field id="itemHasFocus" type="boolean" onChange="onFocus" />
+        <field id="focusPercent" type="float" />
+        <field id="rowFocusPercent" type="float" />
+    </interface>
+    <children>
+        <Rectangle id="bg" color="0x1A1A2EFF" />
+        <Poster id="thumb" loadDisplayMode="scaleToFill" />
+        <Label id="title" font="font:MediumBoldSystemFont" color="0xF3F4F6FF" />
+        <Label id="overview" font="font:SmallestSystemFont" color="0xB4B4C8FF" wrap="true" lineSpacing="2" />
+        <Label id="right" font="font:SmallBoldSystemFont" horizAlign="right" color="0xFBBF24FF" />
+    </children>
+    <script type="text/brs" uri="EpisodeItem.brs" />
+</component>

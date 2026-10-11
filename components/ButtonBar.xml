@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Barra horizontal de botones con foco visible. Sirve de menú superior y de fila de acciones. -->
+<component name="ButtonBar" extends="Group">
+    <interface>
+        <field id="items" type="stringarray" onChange="rebuild" />
+        <field id="itemWidth" type="integer" value="220" onChange="rebuild" />
+        <field id="barHeight" type="integer" value="64" onChange="rebuild" />
+        <field id="filled" type="boolean" value="false" onChange="rebuild" />
+        <field id="activeIndex" type="integer" value="-1" onChange="redraw" />
+        <field id="index" type="integer" value="0" onChange="redraw" />
+        <field id="selected" type="integer" value="-1" alwaysNotify="true" />
+        <field id="gap" type="integer" value="16" onChange="rebuild" />
+    </interface>
+    <script type="text/brs" uri="ButtonBar.brs" />
+</component>

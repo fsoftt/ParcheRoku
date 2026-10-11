@@ -1,0 +1,31 @@
+{
+  "rootDir": ".",
+  "files": [
+    "manifest",
+    "source/**/*.*",
+    "components/**/*.*",
+    "images/**/*.*"
+  ],
+  "stagingDir": "out/staging",
+  "createPackage": false,
+  "sourceMap": false,
+  "plugins": ["@rokucommunity/bslint"],
+  "rules": {
+    "unused-variable": "warn",
+    "assign-all-paths": "error",
+    "unreachable-code": "error",
+    "case-sensitivity": "warn",
+    "no-print": "off",
+    "then-keyword": "off",
+    "inline-if-style": "off",
+    "block-if-style": "off",
+    "condition-style": "off",
+    "color-format": "off",
+    "type-annotations": "off",
+    "function-style": "off",
+    "name-shadowing": "warn",
+    "no-assocarray-component-field-type": "off",
+    "consistent-return": "error",
+    "aa-comma-style": "off"
+  }
+}

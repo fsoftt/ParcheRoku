@@ -1,0 +1,19 @@
+{
+  "name": "parche-roku",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Parche Roku: centro multimedia para Roku (BrightScript + SceneGraph) que reproduce contenido de addons compatibles con Stremio.",
+  "scripts": {
+    "build": "bsc --project bsconfig.json",
+    "lint": "node scripts/lint.js",
+    "test": "node tests/run.js",
+    "images": "node scripts/make-images.js",
+    "package": "node scripts/package.js",
+    "deploy": "node scripts/deploy.js"
+  },
+  "devDependencies": {
+    "@rokucommunity/bslint": "^0.8.0",
+    "brighterscript": "^0.69.0",
+    "brs": "^0.45.0"
+  }
+}

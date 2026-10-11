@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Escena principal: gestiona las pantallas raíz (Inicio, Buscar, Mi lista, Ajustes) y la pila de pantallas encima. -->
+<component name="MainScene" extends="Scene">
+    <children>
+        <Rectangle id="background" translation="[0,0]" width="1920" height="1080" color="0x0B0B14FF" />
+    </children>
+    <script type="text/brs" uri="MainScene.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Nodo de contenido genérico para filas de texto (ajustes, temporadas, fuentes, episodios). -->
+<component name="RowNode" extends="ContentNode">
+    <interface>
+        <field id="line2" type="string" />
+        <field id="right" type="string" />
+        <field id="rightColor" type="string" value="0x9CA3AFFF" />
+        <field id="image" type="string" />
+        <field id="data" type="assocarray" />
+    </interface>
+</component>

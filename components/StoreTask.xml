@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Tarea de escritura en el registro: guarda el avance de reproducción fuera del hilo de render. -->
+<component name="StoreTask" extends="Task">
+    <interface>
+        <field id="entry" type="assocarray" />
+    </interface>
+    <script type="text/brs" uri="StoreTask.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+</component>

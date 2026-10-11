@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Tarea de red: ejecuta una petición de alto nivel (catálogo, fuentes, subtítulos) fuera del hilo de render. -->
+<component name="ApiTask" extends="Task">
+    <interface>
+        <field id="request" type="assocarray" />
+        <field id="response" type="assocarray" />
+    </interface>
+    <script type="text/brs" uri="ApiTask.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Catalog.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Api.brs" />
+</component>

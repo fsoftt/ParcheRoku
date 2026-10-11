@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Tarjeta de póster para RowList y MarkupGrid. Dibuja su propio aro de foco rosa. -->
+<component name="PosterItem" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="onContent" />
+        <field id="width" type="float" onChange="onLayout" />
+        <field id="height" type="float" onChange="onLayout" />
+        <field id="index" type="integer" />
+        <field id="rowIndex" type="integer" />
+        <field id="rowHasFocus" type="boolean" />
+        <field id="rowListHasFocus" type="boolean" />
+        <field id="gridHasFocus" type="boolean" />
+        <field id="listHasFocus" type="boolean" />
+        <field id="itemHasFocus" type="boolean" onChange="onFocus" />
+        <field id="focusPercent" type="float" />
+        <field id="rowFocusPercent" type="float" />
+    </interface>
+    <children>
+        <Rectangle id="ring" color="0xEC4899FF" visible="false" />
+        <Rectangle id="bg" color="0x1A1A2EFF" />
+        <Poster id="poster" loadDisplayMode="scaleToFill" />
+        <Label id="fallback" wrap="true" horizAlign="center" vertAlign="center" font="font:SmallBoldSystemFont" color="0xE5E7EBFF" visible="false" />
+        <Rectangle id="barBg" color="0x00000099" visible="false" />
+        <Rectangle id="bar" color="0xEC4899FF" visible="false" />
+    </children>
+    <script type="text/brs" uri="PosterItem.brs" />
+</component>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Ajustes: idioma, catálogo (clave TMDB opcional), addons de fuentes y de subtítulos, idiomas, calidad y datos. -->
+<component name="SettingsScreen" extends="Group">
+    <interface>
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <ButtonBar id="nav" translation="[80,36]" itemWidth="190" barHeight="56" />
+        <Label id="title" translation="[80,120]" width="1200" height="60" font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+        <Label id="warning" translation="[80,190]" width="1760" height="80" font="font:SmallBoldSystemFont" color="0xFBBF24FF" wrap="true" />
+        <MarkupList id="list" translation="[80,280]" itemComponentName="TextItem" numRows="7" wrapDividerHeight="0"
+            itemSize="[1760,84]" itemSpacing="[0,4]" drawFocusFeedback="false" focusBitmapUri="pkg:/images/transparent.png" />
+        <Label id="hint" translation="[80,1020]" width="1760" height="36" font="font:SmallestSystemFont" color="0x9CA3AFFF" />
+    </children>
+    <script type="text/brs" uri="SettingsScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

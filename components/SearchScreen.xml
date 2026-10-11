@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Búsqueda: teclado en pantalla a la izquierda y resultados (películas y series) a la derecha. -->
+<component name="SearchScreen" extends="Group">
+    <interface>
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <ButtonBar id="nav" translation="[80,36]" itemWidth="190" barHeight="56" />
+        <Label id="title" translation="[80,130]" width="560" height="50" font="font:MediumBoldSystemFont" color="0xFFFFFFFF" />
+        <MiniKeyboard id="keyboard" translation="[80,200]" />
+        <Label id="hint" translation="[80,905]" width="560" height="120" font="font:SmallestSystemFont" color="0x9CA3AFFF" wrap="true" />
+        <MarkupGrid id="grid" translation="[740,150]" itemComponentName="PosterItem" numColumns="5" numRows="3"
+            itemSize="[170,255]" itemSpacing="[28,28]" drawFocusFeedback="false" focusBitmapUri="pkg:/images/transparent.png" />
+        <Rectangle id="gridMask" translation="[700,982]" width="1220" height="98" color="0x0B0B14FF" />
+        <Label id="status" translation="[740,400]" width="1100" height="120" font="font:MediumSystemFont" color="0xE5E7EBFF" horizAlign="center" wrap="true" />
+        <Label id="focusTitle" translation="[740,992]" width="1100" height="40" font="font:SmallBoldSystemFont" color="0xE5E7EBFF" />
+        <Timer id="debounce" duration="0.8" repeat="false" />
+    </children>
+    <script type="text/brs" uri="SearchScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

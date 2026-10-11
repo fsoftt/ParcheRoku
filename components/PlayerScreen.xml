@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Reproductor: nodo Video a pantalla completa, reanuda donde se dejó, subtítulos externos y paso a otra fuente si falla. -->
+<component name="PlayerScreen" extends="Group">
+    <interface>
+        <field id="request" type="assocarray" onChange="onRequest" />
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <Rectangle id="bg" translation="[0,0]" width="1920" height="1080" color="0x000000FF" />
+        <Video id="video" translation="[0,0]" width="1920" height="1080" />
+        <Label id="status" translation="[160,440]" width="1600" height="200" font="font:MediumSystemFont" color="0xE5E7EBFF" horizAlign="center" vertAlign="center" wrap="true" />
+        <Timer id="subsTimer" duration="10" repeat="false" />
+        <Timer id="startTimer" duration="45" repeat="false" />
+    </children>
+    <script type="text/brs" uri="PlayerScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>

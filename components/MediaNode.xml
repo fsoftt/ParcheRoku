@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Nodo de contenido para un título (película o serie) en listas y rejillas. -->
+<component name="MediaNode" extends="ContentNode">
+    <interface>
+        <field id="media" type="assocarray" />
+        <field id="progress" type="float" value="0" />
+    </interface>
+</component>

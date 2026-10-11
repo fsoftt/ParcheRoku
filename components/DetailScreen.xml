@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Ficha de un título: sinopsis, Reproducir / Mi lista y, en series, temporadas y episodios. -->
+<component name="DetailScreen" extends="Group">
+    <interface>
+        <field id="item" type="assocarray" onChange="onItem" />
+        <field id="action" type="assocarray" alwaysNotify="true" />
+        <function name="activate" />
+    </interface>
+    <children>
+        <Poster id="backdrop" translation="[0,0]" width="1920" height="1080" loadDisplayMode="scaleToZoom" />
+        <Rectangle id="shade" translation="[0,0]" width="1920" height="1080" color="0x0B0B14D8" />
+        <Poster id="poster" translation="[80,90]" width="300" height="450" loadDisplayMode="scaleToFill" />
+        <Label id="title" translation="[430,86]" width="1400" height="110" font="font:LargeBoldSystemFont" color="0xFFFFFFFF" wrap="true" />
+        <Label id="meta" translation="[430,200]" width="1400" height="40" font="font:SmallBoldSystemFont" color="0xEC4899FF" />
+        <Label id="desc" translation="[430,252]" width="1300" height="150" font="font:SmallSystemFont" color="0xE5E7EBFF" wrap="true" lineSpacing="4" />
+        <Label id="cast" translation="[430,410]" width="1300" height="36" font="font:SmallestSystemFont" color="0x9CA3AFFF" />
+        <ButtonBar id="actions" translation="[430,466]" itemWidth="320" barHeight="68" filled="true" />
+        <MarkupList id="seasons" translation="[80,590]" itemComponentName="TextItem" numRows="6"
+            itemSize="[360,66]" itemSpacing="[0,4]" drawFocusFeedback="false" focusBitmapUri="pkg:/images/transparent.png" visible="false" />
+        <MarkupList id="episodes" translation="[470,590]" itemComponentName="EpisodeItem" numRows="3"
+            itemSize="[1370,138]" itemSpacing="[0,4]" drawFocusFeedback="false" focusBitmapUri="pkg:/images/transparent.png" visible="false" />
+        <Label id="status" translation="[430,560]" width="1400" height="120" font="font:MediumSystemFont" color="0xE5E7EBFF" wrap="true" />
+    </children>
+    <script type="text/brs" uri="DetailScreen.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Util.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Strings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Plugins.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Language.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Streams.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Settings.brs" />
+    <script type="text/brs" uri="pkg:/components/lib/Ui.brs" />
+</component>
